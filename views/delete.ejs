@@ -1,0 +1,20 @@
+<%-include("partials/header.ejs") %>
+
+<h2>Delete Posts</h2>
+
+<% if (AllPosts.length > 0) { %>
+  <ol>
+    <% AllPosts.forEach(function(Posts, index) { %>
+      <li> <%= Posts %> </li>
+    <% }) %>
+  </ol>
+<% } %>
+
+<form action="/delete" method="POST">
+    <label for="index">Which post number do you want to delete?</label>
+    <input type="number" name="index" min="0" required>
+  
+    <button type="submit">delete Post</button>
+</form>
+
+<%-include("partials/footer.ejs") %>

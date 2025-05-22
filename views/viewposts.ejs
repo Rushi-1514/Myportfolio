@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %>
+
+
+
+<h2>All Posts</h2>
+
+<% if (AllPosts.length > 0) { %>
+  <ol>
+    <% AllPosts.forEach(function(Posts, index) { %>
+      <li> <%= Posts %> </li>
+    <% }) %>
+  </ol>
+<% } else { %>
+  <p>No posts yet!</p>
+<% } %>
+
+<a href="/" class="btn btn-primary mt-3">Back to Home</a>
+
+  <%- include("partials/footer.ejs") %>

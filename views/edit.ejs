@@ -1,0 +1,27 @@
+<%- include("partials/header.ejs") %>
+
+
+<h2>Edit Posts</h2>
+
+<% if (AllPosts.length > 0) { %>
+  <ol>
+    <% AllPosts.forEach(function(Posts, index) { %>
+      <li> <%= Posts %> </li>
+    <% }) %>
+  </ol>
+<% } %>
+
+
+<form action="/edit" method="POST">
+    <label for="index">Which post number do you want to edit?</label>
+    <input type="number" name="index" min="0" required>
+  
+    <label for="newText">Enter new content:</label>
+    <textarea name="newText" rows="4" cols="50" placeholder="Enter updated text" required></textarea>
+  
+    <button type="submit">Update Post</button>
+  </form>
+
+
+
+<%- include("partials/footer.ejs") %>

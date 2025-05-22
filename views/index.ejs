@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+
+
+<h1><%= locals.text %> </h1>
+<form action="/submit" method="POST">
+  <textarea name="text" class="feedback-input" placeholder="New post"></textarea>
+    <input type="submit" value="Create Post">
+  </form>
+
+  <form action="/posts" method="GET">
+    <input type="submit" value="View Post" class="btn btn-primary">
+  </form>
+
+  <form action="/edit" method="GET">
+    <input type="submit" value="Update" class="btn btn-primary">
+  </form>
+
+  <form action="/delete" method="GET">
+    <input type="submit" value="Delete" class="btn btn-primary">
+  </form>
+
+ 
