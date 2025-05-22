@@ -39,7 +39,7 @@ app.post("/edit",(req,res)=>{
     const index = parseInt(req.body.index);
     const newText = req.body.newText;
   
-    if (index >= 0 && index < AllPosts.length) {
+    if (index >= 0 && index <= AllPosts.length) {
       AllPosts[index-1] = newText;
       console.log(newText);
       res.redirect("/posts"); // Go back to see the updated list
